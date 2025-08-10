@@ -9,7 +9,7 @@ const ARTISTS = [
   {
     name: "SkiMT",
     role: "Artist",
-    image: "assets/placeholder-1.webp",
+    image: "assets/SKIMT.jpeg",
     spotify: "https://open.spotify.com/artist/20wCNoXOG9bLhqm2yQ8vBF?si=XtssG5QSSXaNpqZozjy8Qg" // sample (The Weeknd) — replace
   },
   {
