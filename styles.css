@@ -64,7 +64,28 @@ body{
 }
 @media (max-width: 900px){ .artist-grid{grid-template-columns:repeat(6, 1fr)} }
 @media (max-width: 640px){ .artist-grid{grid-template-columns:repeat(4, 1fr)} }
+@media (max-width: 640px){
+  .artists-section { padding: 12px 0 72px; }
 
+  .artist-grid{
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 12px 14px;
+    grid-template-columns: none; /* kill grid on mobile */
+  }
+
+  .artist-grid::-webkit-scrollbar{ display:none; }
+  .artist-grid{ scrollbar-width: none; }
+
+  .artist-card{
+    flex: 0 0 86%;            /* ~1 card per view with a little peek of the next */
+    scroll-snap-align: start; /* snap each card */
+    min-width: 280px;         /* prevent tiny cards on very small screens */
+  }
+}
 .card{
   background:var(--card);
   border:1px solid var(--outline);
