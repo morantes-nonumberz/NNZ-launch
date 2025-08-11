@@ -15,19 +15,19 @@ const ARTISTS = [
   {
     name: "Rico TBW",
     role: "Artist",
-    image: "assets/placeholder-2.webp",
+    image: "assets/RICO.png",
     spotify: "https://open.spotify.com/artist/2BH6N2tMUGsXF1FkPpMgYz?si=eCpIxTHLRE6tJfc6q9YRJA" // sample (Ed Sheeran) — replace
   },
   {
     name: "SAMU",
     role: "Artist",
-    image: "assets/placeholder-3.webp",
+    image: "assets/SAMU.png",
     spotify: "https://open.spotify.com/artist/3DdUMIdATa1z7xDsRpNt59?si=Tvr51OS1Szeebv2q8H3CTw" // sample (Ariana Grande) — replace
   },
   {
     name: "MYNSK",
     role: "Artist",
-    image: "assets/placeholder-3.webp",
+    image: "assets/MYNSK.png",
     spotify: "https://open.spotify.com/artist/1XLFwDTuzaDxjWTeLPS0wm?si=akP3CHGkRn2pbqSkIS-JCA" // sample (Ariana Grande) — replace
   }
 ];
