@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO: Primary ───────────────────────────── -->
+  <title>No Numberz (NNZ) — Artist Management | Medellín, Colombia</title>
+  <meta name="description" content="NNZ is a Medellín-based artist management agency representing SkiMT, Rico TBW, SAMU and MYNSK. Urban music, R&B, Trap and Hip-Hop." />
+  <meta name="keywords"    content="NNZ, No Numberz, artist management, Medellín, Colombia, SkiMT, Rico TBW, SAMU, MYNSK, urban music, R&B, trap, hip-hop, reggaeton" />
+  <meta name="author"      content="No Numberz" />
+  <link rel="canonical"    href="https://nonumberz.com/" />
+
+  <!-- ── SEO: Open Graph ───────────────────────── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://nonumberz.com/" />
+  <meta property="og:title"       content="No Numberz (NNZ) — Artist Management" />
+  <meta property="og:description" content="Medellín-based artist management agency representing SkiMT, Rico TBW, SAMU and MYNSK." />
+  <meta property="og:image"       content="https://nonumberz.com/assets/nnz_white_logo_transparent.png" />
+
+  <!-- ── SEO: Twitter Card ─────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="No Numberz (NNZ) — Artist Management" />
+  <meta name="twitter:description" content="Medellín-based artist management agency representing SkiMT, Rico TBW, SAMU and MYNSK." />
+  <meta name="twitter:image"       content="https://nonumberz.com/assets/nnz_white_logo_transparent.png" />
+
+  <!-- ── SEO: Structured Data (JSON-LD) ───────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "No Numberz",
+    "alternateName": "NNZ",
+    "url": "https://nonumberz.com",
+    "logo": "https://nonumberz.com/assets/nnz_white_logo_transparent.png",
+    "description": "Artist management agency based in Medellín, Colombia.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Medellín", "addressCountry": "CO" },
+    "email": "morantes@nonumberz.com",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- ── Favicon ───────────────────────────────── -->
+  <link rel="icon"           href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon"  href="favicon.ico" type="image/x-icon" />
+
+  <!-- ── Google Analytics ──────────────────────── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-11GTEVNQRZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-11GTEVNQRZ');
+  </script>
+
+  <!-- ── Fonts ─────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ── Stylesheet ────────────────────────────── -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" role="status" aria-label="Loading">
+  <img class="loader-logo" src="assets/nnz_white_logo_transparent.png" alt="NNZ" />
+  <div class="loader-letters" aria-hidden="true"><span>N</span><span>N</span><span>Z</span></div>
+  <div class="loader-bar-track"><div class="loader-bar"></div></div>
+</div>
+
+<!-- VIDEO LIGHTBOX -->
+<div class="vbox" id="vbox" role="dialog" aria-label="Video player">
+  <div class="vbox-inner">
+    <button class="vbox-close" id="vboxClose">✕ Close</button>
+    <iframe id="vboxFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video player"></iframe>
+  </div>
+</div>
+
+<!-- GALLERY LIGHTBOX -->
+<div class="gbox" id="gbox" role="dialog" aria-label="Photo viewer">
+  <button class="gbox-close" id="gboxClose">✕ Close</button>
+  <button class="gbox-nav gbox-prev" id="gboxPrev" aria-label="Previous">←</button>
+  <img id="gboxImg" src="" alt="" />
+  <button class="gbox-nav gbox-next" id="gboxNext" aria-label="Next">→</button>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#artists" onclick="closeMenu()">Artists</a>
+  <a href="#videos" onclick="closeMenu()">Videos</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#press" onclick="closeMenu()">Press</a>
+  <a href="#store" onclick="closeMenu()">Store</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="No Numberz home">
+    <img src="assets/nnz_white_logo_transparent.png" alt="NNZ logo" height="28" />
+    <span class="nav-brand">NO NUMBERZ</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#artists">Artists</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#store">Store</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Medellín, Colombia — Est. 2024</div>
+    <h1 class="hero-h1">ARTIST<br><span class="red">MGMT.</span></h1>
+    <p class="hero-sub">NNZ is a management agency focused on impact and craft — bridging the gap between artistic vision and industry reach.</p>
+    <div class="hero-btns">
+      <a href="#artists" class="btn btn-red">View Roster <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#contact" class="btn btn-ghost">Work with us</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><div class="chevron"></div></div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-item">NNZ<span class="ticker-dot"></span></div>
+    <div class="ticker-item">ARTIST MANAGEMENT<span class="ticker-dot"></span></div>
+    <div class="ticker-item">MEDELLÍN<span class="ticker-dot"></span></div>
+    <div class="ticker-item">SKIMT<span class="ticker-dot"></span></div>
+    <div class="ticker-item">RICO TBW<span class="ticker-dot"></span></div>
+    <div class="ticker-item">SAMU<span class="ticker-dot"></span></div>
+    <div class="ticker-item">MYNSK<span class="ticker-dot"></span></div>
+    <div class="ticker-item">R&amp;B · TRAP · HIP-HOP<span class="ticker-dot"></span></div>
+    <div class="ticker-item">COLOMBIA<span class="ticker-dot"></span></div>
+    <div class="ticker-item">NNZ<span class="ticker-dot"></span></div>
+    <div class="ticker-item">ARTIST MANAGEMENT<span class="ticker-dot"></span></div>
+    <div class="ticker-item">MEDELLÍN<span class="ticker-dot"></span></div>
+    <div class="ticker-item">SKIMT<span class="ticker-dot"></span></div>
+    <div class="ticker-item">RICO TBW<span class="ticker-dot"></span></div>
+    <div class="ticker-item">SAMU<span class="ticker-dot"></span></div>
+    <div class="ticker-item">MYNSK<span class="ticker-dot"></span></div>
+    <div class="ticker-item">R&amp;B · TRAP · HIP-HOP<span class="ticker-dot"></span></div>
+    <div class="ticker-item">COLOMBIA<span class="ticker-dot"></span></div>
+  </div>
+</div>
+
+<main>
+
+<!-- ARTISTS -->
+<section class="section" id="artists" aria-labelledby="artists-heading">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">Roster</div>
+      <h2 class="section-h" id="artists-heading">OUR<br>ARTISTS</h2>
+    </div>
+    <span class="roster-count">4 Active Artists</span>
+  </div>
+  <div class="artist-grid">
+
+    <article class="acard reveal" itemscope itemtype="https://schema.org/MusicGroup">
+      <div class="acard-photo"><span class="acard-num">01</span><img src="assets/skimt.jpeg" alt="SkiMT — NNZ artist" loading="lazy" itemprop="image" /></div>
+      <div class="acard-body">
+        <h3 class="acard-name" itemprop="name">SKIMT</h3>
+        <p class="acard-genre" itemprop="genre">R&amp;B · Trap · Urban · Reggaeton</p>
+        <div class="acard-spotify"><iframe src="https://open.spotify.com/embed/artist/20wCNoXOG9bLhqm2yQ8vBF?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="SkiMT on Spotify"></iframe></div>
+        <div class="acard-socials">
+          <a href="https://open.spotify.com/artist/20wCNoXOG9bLhqm2yQ8vBF" target="_blank" rel="noopener" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Spotify</a>
+          <a href="https://www.instagram.com/skimt_/" target="_blank" rel="noopener" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="acard reveal" style="transition-delay:.12s" itemscope itemtype="https://schema.org/MusicGroup">
+      <div class="acard-photo"><span class="acard-num">02</span><img src="assets/rico.png" alt="Rico TBW — NNZ artist" loading="lazy" itemprop="image" /></div>
+      <div class="acard-body">
+        <h3 class="acard-name" itemprop="name">RICO TBW</h3>
+        <p class="acard-genre" itemprop="genre">R&amp;B · Trap · Rap · Hip-Hop</p>
+        <div class="acard-spotify"><iframe src="https://open.spotify.com/embed/artist/2BH6N2tMUGsXF1FkPpMgYz?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Rico TBW on Spotify"></iframe></div>
+        <div class="acard-socials">
+          <a href="https://open.spotify.com/artist/2BH6N2tMUGsXF1FkPpMgYz" target="_blank" rel="noopener" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Spotify</a>
+          <a href="https://www.instagram.com/rico_tbw/" target="_blank" rel="noopener" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
+          <a href="https://www.tiktok.com/@rico_tbw" target="_blank" rel="noopener" class="social-btn"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>TikTok</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="acard reveal" style="transition-delay:.22s" itemscope itemtype="https://schema.org/MusicGroup">
+      <div class="acard-photo"><span class="acard-num">03</span><img src="assets/samu.png" alt="SAMU — NNZ artist" loading="lazy" itemprop="image" /></div>
+      <div class="acard-body">
+        <h3 class="acard-name" itemprop="name">SAMU</h3>
+        <p class="acard-genre" itemprop="genre">Urban · Trap · Alternative</p>
+        <div class="acard-spotify"><iframe src="https://open.spotify.com/embed/artist/3DdUMIdATa1z7xDsRpNt59?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="SAMU on Spotify"></iframe></div>
+        <div class="acard-socials">
+          <a href="https://open.spotify.com/artist/3DdUMIdATa1z7xDsRpNt59" target="_blank" rel="noopener" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Spotify</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="acard reveal" style="transition-delay:.32s" itemscope itemtype="https://schema.org/MusicGroup">
+      <div class="acard-photo"><span class="acard-num">04</span><img src="assets/mynsk.png" alt="MYNSK — NNZ artist" loading="lazy" itemprop="image" /></div>
+      <div class="acard-body">
+        <h3 class="acard-name" itemprop="name">MYNSK</h3>
+        <p class="acard-genre" itemprop="genre">Urban · Hip-Hop · Alternative</p>
+        <div class="acard-spotify"><iframe src="https://open.spotify.com/embed/artist/1XLFwDTuzaDxjWTeLPS0wm?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="MYNSK on Spotify"></iframe></div>
+        <div class="acard-socials">
+          <a href="https://open.spotify.com/artist/1XLFwDTuzaDxjWTeLPS0wm" target="_blank" rel="noopener" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Spotify</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar" aria-label="NNZ by the numbers">
+  <div class="stat-cell reveal"><span class="stat-n">4</span><div class="stat-l">Artists Managed</div></div>
+  <div class="stat-cell reveal" style="transition-delay:.1s"><span class="stat-n">80K</span><div class="stat-l">TikTok Followers</div></div>
+  <div class="stat-cell reveal" style="transition-delay:.18s"><span class="stat-n">3.3M</span><div class="stat-l">TikTok Likes</div></div>
+  <div class="stat-cell reveal" style="transition-delay:.26s"><span class="stat-n">COL</span><div class="stat-l">Based In</div></div>
+</div>
+
+<!-- ═══════════════════════════════════
+     VIDEOS
+     Replace the YouTube video IDs below with your real ones.
+     Format: https://youtube.com/watch?v=VIDEO_ID
+     Thumbnail: https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg
+═══════════════════════════════════ -->
+<section class="section" id="videos" aria-labelledby="videos-heading">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">Visual</div>
+      <h2 class="section-h" id="videos-heading">MUSIC<br>VIDEOS</h2>
+    </div>
+    <div class="video-filters" role="group" aria-label="Filter by artist">
+      <button class="vf-btn active" data-filter="all">All</button>
+      <button class="vf-btn" data-filter="skimt">SkiMT</button>
+      <button class="vf-btn" data-filter="rico">Rico TBW</button>
+      <button class="vf-btn" data-filter="samu">SAMU</button>
+      <button class="vf-btn" data-filter="mynsk">MYNSK</button>
+    </div>
+  </div>
+  <div class="video-grid" id="videoGrid">
+    <!--
+      HOW TO ADD VIDEOS:
+      1. Get the YouTube video ID from the URL (e.g. dQw4w9WgXcQ)
+      2. Set data-artist to the artist slug (skimt / rico / samu / mynsk)
+      3. Set data-vid to the YouTube video ID
+      4. Update the thumbnail src and title
+    -->
+    <div class="vcard reveal" data-artist="skimt" data-vid="REPLACE_SKIMT_VIDEO_ID_1">
+      <div class="vcard-thumb" role="button" tabindex="0" aria-label="Play video">
+        <img src="https://img.youtube.com/vi/REPLACE_SKIMT_VIDEO_ID_1/maxresdefault.jpg" alt="SkiMT music video" loading="lazy" onerror="this.src='assets/skimt.jpeg'" />
+        <div class="vcard-play"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="39" stroke="white" stroke-width="1.5" stroke-opacity="0.6"/><path d="M32 27l22 13-22 13V27z" fill="white"/></svg></div>
+      </div>
+      <div class="vcard-info"><div class="vcard-artist">SkiMT</div><div class="vcard-title">Add Video Title Here</div></div>
+    </div>
+
+    <div class="vcard reveal" style="transition-delay:.1s" data-artist="rico" data-vid="REPLACE_RICO_VIDEO_ID_1">
+      <div class="vcard-thumb" role="button" tabindex="0" aria-label="Play video">
+        <img src="https://img.youtube.com/vi/REPLACE_RICO_VIDEO_ID_1/maxresdefault.jpg" alt="Rico TBW music video" loading="lazy" onerror="this.src='assets/rico.png'" />
+        <div class="vcard-play"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="39" stroke="white" stroke-width="1.5" stroke-opacity="0.6"/><path d="M32 27l22 13-22 13V27z" fill="white"/></svg></div>
+      </div>
+      <div class="vcard-info"><div class="vcard-artist">Rico TBW</div><div class="vcard-title">Add Video Title Here</div></div>
+    </div>
+
+    <div class="vcard reveal" style="transition-delay:.18s" data-artist="samu" data-vid="REPLACE_SAMU_VIDEO_ID_1">
+      <div class="vcard-thumb" role="button" tabindex="0" aria-label="Play video">
+        <img src="https://img.youtube.com/vi/REPLACE_SAMU_VIDEO_ID_1/maxresdefault.jpg" alt="SAMU music video" loading="lazy" onerror="this.src='assets/samu.png'" />
+        <div class="vcard-play"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="39" stroke="white" stroke-width="1.5" stroke-opacity="0.6"/><path d="M32 27l22 13-22 13V27z" fill="white"/></svg></div>
+      </div>
+      <div class="vcard-info"><div class="vcard-artist">SAMU</div><div class="vcard-title">Add Video Title Here</div></div>
+    </div>
+
+    <div class="vcard reveal" style="transition-delay:.26s" data-artist="mynsk" data-vid="REPLACE_MYNSK_VIDEO_ID_1">
+      <div class="vcard-thumb" role="button" tabindex="0" aria-label="Play video">
+        <img src="https://img.youtube.com/vi/REPLACE_MYNSK_VIDEO_ID_1/maxresdefault.jpg" alt="MYNSK music video" loading="lazy" onerror="this.src='assets/mynsk.png'" />
+        <div class="vcard-play"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="39" stroke="white" stroke-width="1.5" stroke-opacity="0.6"/><path d="M32 27l22 13-22 13V27z" fill="white"/></svg></div>
+      </div>
+      <div class="vcard-info"><div class="vcard-artist">MYNSK</div><div class="vcard-title">Add Video Title Here</div></div>
+    </div>
+
+    <div class="vcard reveal" style="transition-delay:.32s" data-artist="skimt" data-vid="REPLACE_SKIMT_VIDEO_ID_2">
+      <div class="vcard-thumb" role="button" tabindex="0" aria-label="Play video">
+        <img src="https://img.youtube.com/vi/REPLACE_SKIMT_VIDEO_ID_2/maxresdefault.jpg" alt="SkiMT music video" loading="lazy" onerror="this.src='assets/skimt.jpeg'" />
+        <div class="vcard-play"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="39" stroke="white" stroke-width="1.5" stroke-opacity="0.6"/><path d="M32 27l22 13-22 13V27z" fill="white"/></svg></div>
+      </div>
+      <div class="vcard-info"><div class="vcard-artist">SkiMT</div><div class="vcard-title">Add Video Title Here</div></div>
+    </div>
+
+    <div class="vcard reveal" style="transition-delay:.38s" data-artist="rico" data-vid="REPLACE_RICO_VIDEO_ID_2">
+      <div class="vcard-thumb" role="button" tabindex="0" aria-label="Play video">
+        <img src="https://img.youtube.com/vi/REPLACE_RICO_VIDEO_ID_2/maxresdefault.jpg" alt="Rico TBW music video" loading="lazy" onerror="this.src='assets/rico.png'" />
+        <div class="vcard-play"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="39" stroke="white" stroke-width="1.5" stroke-opacity="0.6"/><path d="M32 27l22 13-22 13V27z" fill="white"/></svg></div>
+      </div>
+      <div class="vcard-info"><div class="vcard-artist">Rico TBW</div><div class="vcard-title">Add Video Title Here</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     GALLERY
+     Replace artist photos with real shoot/BTS images.
+     Upload them to your assets/ folder and update the src paths.
+═══════════════════════════════════ -->
+<section class="section" id="gallery" aria-labelledby="gallery-heading">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">Behind the scenes</div>
+      <h2 class="section-h" id="gallery-heading">GALLERY</h2>
+    </div>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gitem reveal" data-src="assets/skimt.jpeg" data-label="SkiMT"><img src="assets/skimt.jpeg" alt="SkiMT" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">SkiMT</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.08s" data-src="assets/rico.png" data-label="Rico TBW"><img src="assets/rico.png" alt="Rico TBW" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">Rico TBW</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.14s" data-src="assets/samu.png" data-label="SAMU"><img src="assets/samu.png" alt="SAMU" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">SAMU</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.2s" data-src="assets/mynsk.png" data-label="MYNSK"><img src="assets/mynsk.png" alt="MYNSK" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">MYNSK</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.26s" data-src="assets/rico.png" data-label="Rico TBW — Studio"><img src="assets/rico.png" alt="Rico TBW studio" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">Rico TBW — Studio</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.32s" data-src="assets/skimt.jpeg" data-label="SkiMT — Live"><img src="assets/skimt.jpeg" alt="SkiMT live" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">SkiMT — Live</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.36s" data-src="assets/mynsk.png" data-label="MYNSK — Shoot"><img src="assets/mynsk.png" alt="MYNSK shoot" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">MYNSK — Shoot</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.4s" data-src="assets/samu.png" data-label="SAMU — BTS"><img src="assets/samu.png" alt="SAMU BTS" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">SAMU — BTS</span></div></div>
+    <div class="gitem reveal" style="transition-delay:.44s" data-src="assets/rico.png" data-label="NNZ Crew"><img src="assets/rico.png" alt="NNZ crew" loading="lazy" /><div class="gitem-overlay"><span class="gitem-label">NNZ Crew</span></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     PRESS
+     Update these cards as real press coverage comes in.
+═══════════════════════════════════ -->
+<section class="section" id="press" aria-labelledby="press-heading">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-tag">News</div>
+      <h2 class="section-h" id="press-heading">PRESS &amp;<br>UPDATES</h2>
+    </div>
+  </div>
+  <div class="press-grid">
+
+    <article class="pcard featured reveal">
+      <div class="pcard-img"><img src="assets/skimt.jpeg" alt="NNZ featured press" loading="lazy" /></div>
+      <div class="pcard-content">
+        <div class="pcard-meta"><span class="pcard-tag">Featured</span><span class="pcard-date">2025</span></div>
+        <h3 class="pcard-title">No Numberz launches — Medellín's newest artist management agency is here</h3>
+        <p class="pcard-excerpt">NNZ is redefining what artist management means in Colombia's urban music scene, with a roster that spans R&B, trap, hip-hop and more. Four artists. One vision. No limits.</p>
+        <a href="#contact" class="pcard-link">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </article>
+
+    <article class="pcard reveal" style="transition-delay:.1s">
+      <div class="pcard-meta"><span class="pcard-tag">Artist</span><span class="pcard-date">2025</span></div>
+      <h3 class="pcard-title">Rico TBW crosses 80K followers on TikTok</h3>
+      <p class="pcard-excerpt">Rico TBW's organic TikTok growth hits a new milestone with 80K followers and 3.3M total likes — all without a label push.</p>
+      <a href="https://www.tiktok.com/@rico_tbw" target="_blank" rel="noopener" class="pcard-link">Follow on TikTok <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </article>
+
+    <article class="pcard reveal" style="transition-delay:.18s">
+      <div class="pcard-meta"><span class="pcard-tag">Artist</span><span class="pcard-date">2025</span></div>
+      <h3 class="pcard-title">SkiMT drops new music — available now on Spotify</h3>
+      <p class="pcard-excerpt">SkiMT continues to push the boundaries of Colombian R&B and trap with fresh releases that are building steady momentum on streaming platforms.</p>
+      <a href="https://open.spotify.com/artist/20wCNoXOG9bLhqm2yQ8vBF" target="_blank" rel="noopener" class="pcard-link">Listen on Spotify <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </article>
+
+    <article class="pcard reveal" style="transition-delay:.24s">
+      <div class="pcard-meta"><span class="pcard-tag">Roster</span><span class="pcard-date">2025</span></div>
+      <h3 class="pcard-title">SAMU and MYNSK join the NNZ family</h3>
+      <p class="pcard-excerpt">NNZ expands its roster with two new additions — SAMU and MYNSK — bringing the total to four artists across urban, alternative and hip-hop.</p>
+      <a href="#artists" class="pcard-link">View Roster <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     STORE
+     Update merch items and music platform links.
+     For real merch: link scard-btn to your Shopify, Gumroad, etc.
+═══════════════════════════════════ -->
+<section class="section" id="store" aria-labelledby="store-heading">
+  <div class="store-intro reveal">
+    <div class="section-tag">Store</div>
+    <h2 class="section-h" id="store-heading">MERCH &amp;<br>MUSIC</h2>
+    <p>Support the artists directly. Grab exclusive merch and stream their music on every platform.</p>
+  </div>
+
+  <div class="store-grid">
+    <div class="scard reveal">
+      <div class="scard-img"><span class="scard-badge">NNZ</span><img src="assets/nnz_white_logo_transparent.png" alt="NNZ Logo Tee" loading="lazy" style="object-fit:contain;padding:2rem;background:#111;" /></div>
+      <div class="scard-body">
+        <div class="scard-artist">No Numberz</div>
+        <div class="scard-name">NNZ LOGO TEE</div>
+        <p class="scard-desc">Classic heavyweight tee. NNZ logo front, blacked out. Limited run.</p>
+        <div class="scard-footer">
+          <span class="scard-price">$35</span>
+          <button class="scard-btn" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard reveal" style="transition-delay:.1s">
+      <div class="scard-img"><span class="scard-badge">SkiMT</span><img src="assets/skimt.jpeg" alt="SkiMT merch" loading="lazy" /></div>
+      <div class="scard-body">
+        <div class="scard-artist">SkiMT</div>
+        <div class="scard-name">SKIMT HOODIE</div>
+        <p class="scard-desc">Heavyweight pullover hoodie. SkiMT artist edition, limited drop.</p>
+        <div class="scard-footer">
+          <span class="scard-price">$55</span>
+          <button class="scard-btn" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard reveal" style="transition-delay:.18s">
+      <div class="scard-img"><span class="scard-badge">Rico TBW</span><img src="assets/rico.png" alt="Rico TBW merch" loading="lazy" /></div>
+      <div class="scard-body">
+        <div class="scard-artist">Rico TBW</div>
+        <div class="scard-name">TBW CAP</div>
+        <p class="scard-desc">Structured 6-panel cap. Embroidered TBW logo. One size fits most.</p>
+        <div class="scard-footer">
+          <span class="scard-price">$30</span>
+          <button class="scard-btn" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Music links -->
+  <div class="music-strip reveal">
+    <div class="music-strip-copy">
+      <h3>STREAM THE<br>MUSIC</h3>
+      <p>All four NNZ artists are on every major platform. Pick yours and start listening.</p>
+    </div>
+    <div class="music-platforms">
+      <a href="https://open.spotify.com/artist/20wCNoXOG9bLhqm2yQ8vBF" target="_blank" rel="noopener" class="platform-link">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        <span class="platform-name">Spotify</span><span class="platform-action">Listen →</span>
+      </a>
+      <a href="https://www.tiktok.com/@rico_tbw" target="_blank" rel="noopener" class="platform-link">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
+        <span class="platform-name">TikTok</span><span class="platform-action">Follow →</span>
+      </a>
+      <a href="https://www.instagram.com/skimt_/" target="_blank" rel="noopener" class="platform-link">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <span class="platform-name">Instagram</span><span class="platform-action">Follow →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact" aria-labelledby="contact-heading">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="section-tag">Contact</div>
+      <h2 class="section-h contact-h" id="contact-heading">LET'S<br>BUILD.</h2>
+      <p class="contact-desc">For bookings, press, media, and collaboration opportunities — reach out below and we'll get back to you.</p>
+      <div class="contact-info">
+        <div class="info-item"><div class="info-label">Email</div><div class="info-val">morantes@nonumberz.com</div></div>
+        <div class="info-item"><div class="info-label">Based In</div><div class="info-val">Medellín, Colombia</div></div>
+        <div class="info-item"><div class="info-label">Open For</div><div class="info-val">Bookings · Press · Collaborations</div></div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.15s">
+      <form class="cform" id="cform" action="https://formspree.io/f/xpqopokd" method="POST" novalidate>
+        <div class="frow">
+          <div class="fgroup"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" /></div>
+          <div class="fgroup"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" /></div>
+        </div>
+        <div class="fgroup">
+          <label for="reason">Reason</label>
+          <select id="reason" name="reason" required>
+            <option value="" disabled selected>Select a reason</option>
+            <option>Booking</option><option>Press / Media</option><option>Collaboration</option><option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="fgroup"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you have in mind…" required></textarea></div>
+        <div class="fstatus" id="fstatus" role="status" aria-live="polite"></div>
+        <button type="submit" class="btn-send" id="fsend">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <span class="foot-brand">NO NUMBERZ</span>
+      <p>A Medellín-based artist management agency focused on impact, craft, and building careers that last.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#press">Press</a></li>
+        <li><a href="#store">Store</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Artists</h4>
+      <ul>
+        <li><a href="https://open.spotify.com/artist/20wCNoXOG9bLhqm2yQ8vBF" target="_blank" rel="noopener">SkiMT</a></li>
+        <li><a href="https://open.spotify.com/artist/2BH6N2tMUGsXF1FkPpMgYz" target="_blank" rel="noopener">Rico TBW</a></li>
+        <li><a href="https://open.spotify.com/artist/3DdUMIdATa1z7xDsRpNt59" target="_blank" rel="noopener">SAMU</a></li>
+        <li><a href="https://open.spotify.com/artist/1XLFwDTuzaDxjWTeLPS0wm" target="_blank" rel="noopener">MYNSK</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="foot-copy">© <span id="yr"></span> No Numberz — All rights reserved.</span>
+    <span class="foot-copy">morantes@nonumberz.com</span>
+  </div>
+</footer>
+
+<!-- ── Scripts ───────────────────────────────── -->
+<script src="script.js"></script>
+</body>
+</html>
