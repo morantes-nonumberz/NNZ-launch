@@ -72,7 +72,7 @@
 <!-- VIDEO LIGHTBOX -->
 <div class="vbox" id="vbox" role="dialog" aria-label="Video player">
   <div class="vbox-inner">
-    <button class="vbox-close" id="vboxClose">✕ Close</button>
+    <button class="vbox-close" id="vboxClose" data-i18n="lightbox.close">✕ Close</button>
     <iframe id="vboxFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video player"></iframe>
   </div>
 </div>
@@ -87,12 +87,12 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <a href="#artists" onclick="closeMenu()">Artists</a>
+  <a href="#artists" onclick="closeMenu()" data-i18n="nav.artists">Artists</a>
   <a href="#videos" onclick="closeMenu()">Videos</a>
-  <a href="#gallery" onclick="closeMenu()">Gallery</a>
-  <a href="#press" onclick="closeMenu()">Press</a>
-  <a href="#store" onclick="closeMenu()">Store</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#gallery" onclick="closeMenu()" data-i18n="nav.gallery">Gallery</a>
+  <a href="#press" onclick="closeMenu()" data-i18n="nav.press">Press</a>
+  <a href="#store" onclick="closeMenu()" data-i18n="nav.store">Store</a>
+  <a href="#contact" onclick="closeMenu()" data-i18n="nav.contact">Contact</a>
 </div>
 
 <!-- NAV -->
@@ -102,14 +102,17 @@
     <span class="nav-brand">NO NUMBERZ</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#artists">Artists</a></li>
+    <li><a href="#artists" data-i18n="nav.artists">Artists</a></li>
     <li><a href="#videos">Videos</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#press">Press</a></li>
-    <li><a href="#store">Store</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+    <li><a href="#press" data-i18n="nav.press">Press</a></li>
+    <li><a href="#store" data-i18n="nav.store">Store</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Get in touch</a>
+  <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in touch</a>
+  <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+    <span class="lang-opt active" data-lang="en">EN</span>/<span class="lang-opt" data-lang="es">ES</span>
+  </button>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -122,13 +125,13 @@
   <div class="hero-inner">
     <div class="hero-eyebrow">Medellín, Colombia — Est. 2024</div>
     <h1 class="hero-h1">ARTIST<br><span class="red">MGMT.</span></h1>
-    <p class="hero-sub">NNZ is a management agency focused on impact and craft — bridging the gap between artistic vision and industry reach.</p>
+    <p class="hero-sub" data-i18n="hero.sub">NNZ is a management agency focused on impact and craft — bridging the gap between artistic vision and industry reach.</p>
     <div class="hero-btns">
-      <a href="#artists" class="btn btn-red">View Roster <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="#contact" class="btn btn-ghost">Work with us</a>
+      <a href="#artists" class="btn btn-red"><span data-i18n="hero.btn1">View Roster</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero.btn2">Work with us</a>
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><div class="chevron"></div></div>
+  <div class="hero-scroll" aria-hidden="true"><span data-i18n="hero.scroll">Scroll</span><div class="chevron"></div></div>
 </header>
 
 <!-- TICKER -->
@@ -161,10 +164,10 @@
 <section class="section" id="artists" aria-labelledby="artists-heading">
   <div class="section-head reveal">
     <div>
-      <div class="section-tag">Roster</div>
-      <h2 class="section-h" id="artists-heading">OUR<br>ARTISTS</h2>
+      <div class="section-tag" data-i18n="artists.tag">Roster</div>
+      <h2 class="section-h" id="artists-heading" data-i18n-html="artists.heading">OUR<br>ARTISTS</h2>
     </div>
-    <span class="roster-count">4 Active Artists</span>
+    <span class="roster-count" data-i18n="artists.count">4 Active Artists</span>
   </div>
   <div class="artist-grid">
 
@@ -230,10 +233,10 @@
 
 <!-- STATS -->
 <div class="stats-bar" aria-label="NNZ by the numbers">
-  <div class="stat-cell reveal"><span class="stat-n">4</span><div class="stat-l">Artists Managed</div></div>
-  <div class="stat-cell reveal" style="transition-delay:.1s"><span class="stat-n">120k</span><div class="stat-l">TikTok Followers</div></div>
-  <div class="stat-cell reveal" style="transition-delay:.18s"><span class="stat-n">3.5M</span><div class="stat-l">TikTok Likes</div></div>
-  <div class="stat-cell reveal" style="transition-delay:.26s"><span class="stat-n">COL</span><div class="stat-l">Based In</div></div>
+  <div class="stat-cell reveal"><span class="stat-n">4</span><div class="stat-l" data-i18n="stats.managed">Artists Managed</div></div>
+  <div class="stat-cell reveal" style="transition-delay:.1s"><span class="stat-n">120k</span><div class="stat-l" data-i18n="stats.followers">TikTok Followers</div></div>
+  <div class="stat-cell reveal" style="transition-delay:.18s"><span class="stat-n">3.5M</span><div class="stat-l" data-i18n="stats.likes">TikTok Likes</div></div>
+  <div class="stat-cell reveal" style="transition-delay:.26s"><span class="stat-n">COL</span><div class="stat-l" data-i18n="stats.based">Based In</div></div>
 </div>
 
 <!-- ═══════════════════════════════════
@@ -245,11 +248,11 @@
 <section class="section" id="videos" aria-labelledby="videos-heading">
   <div class="section-head reveal">
     <div>
-      <div class="section-tag">Visual</div>
-      <h2 class="section-h" id="videos-heading">MUSIC<br>VIDEOS</h2>
+      <div class="section-tag" data-i18n="videos.tag">Visual</div>
+      <h2 class="section-h" id="videos-heading" data-i18n-html="videos.heading">MUSIC<br>VIDEOS</h2>
     </div>
     <div class="video-filters" role="group" aria-label="Filter by artist">
-      <button class="vf-btn active" data-filter="all">All</button>
+      <button class="vf-btn active" data-filter="all" data-i18n="videos.all">All</button>
       <button class="vf-btn" data-filter="skimt">SkiMT</button>
       <button class="vf-btn" data-filter="rico">Rico TBW</button>
       <button class="vf-btn" data-filter="samu">SAMU</button>
@@ -322,8 +325,8 @@
 <section class="section" id="gallery" aria-labelledby="gallery-heading">
   <div class="section-head reveal">
     <div>
-      <div class="section-tag">Behind the scenes</div>
-      <h2 class="section-h" id="gallery-heading">GALLERY</h2>
+      <div class="section-tag" data-i18n="gallery.tag">Behind the scenes</div>
+      <h2 class="section-h" id="gallery-heading" data-i18n="gallery.heading">GALLERY</h2>
     </div>
   </div>
   <div class="gallery-grid" id="galleryGrid">
@@ -346,8 +349,8 @@
 <section class="section" id="press" aria-labelledby="press-heading">
   <div class="section-head reveal">
     <div>
-      <div class="section-tag">News</div>
-      <h2 class="section-h" id="press-heading">PRESS &amp;<br>UPDATES</h2>
+      <div class="section-tag" data-i18n="press.tag">News</div>
+      <h2 class="section-h" id="press-heading" data-i18n-html="press.heading">PRESS &amp;<br>UPDATES</h2>
     </div>
   </div>
   <div class="press-grid">
@@ -356,31 +359,31 @@
       <div class="pcard-img"><img src="assets/skimt.jpeg" alt="NNZ featured press" loading="lazy" /></div>
       <div class="pcard-content">
         <div class="pcard-meta"><span class="pcard-tag">Featured</span><span class="pcard-date">2025</span></div>
-        <h3 class="pcard-title">No Numberz launches — Medellín's newest artist management agency is here</h3>
-        <p class="pcard-excerpt">NNZ is redefining what artist management means in Colombia's urban music scene, with a roster that spans R&B, trap, hip-hop and more. Four artists. One vision. No limits.</p>
-        <a href="#contact" class="pcard-link">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <h3 class="pcard-title" data-i18n="press.featured.title">No Numberz launches — Medellín's newest artist management agency is here</h3>
+        <p class="pcard-excerpt" data-i18n="press.featured.excerpt">NNZ is redefining what artist management means in Colombia's urban music scene, with a roster that spans R&B, trap, hip-hop and more. Four artists. One vision. No limits.</p>
+        <a href="#contact" class="pcard-link"><span data-i18n="press.readmore">Read more</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </article>
 
     <article class="pcard reveal" style="transition-delay:.1s">
       <div class="pcard-meta"><span class="pcard-tag">Artist</span><span class="pcard-date">2025</span></div>
-      <h3 class="pcard-title">Rico TBW crosses 80K followers on TikTok</h3>
-      <p class="pcard-excerpt">Rico TBW's organic TikTok growth hits a new milestone with 80K followers and 3.3M total likes — all without a label push.</p>
-      <a href="https://www.tiktok.com/@rico_tbw" target="_blank" rel="noopener" class="pcard-link">Follow on TikTok <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <h3 class="pcard-title" data-i18n="press.rico.title">Rico TBW crosses 80K followers on TikTok</h3>
+      <p class="pcard-excerpt" data-i18n="press.rico.excerpt">Rico TBW's organic TikTok growth hits a new milestone with 80K followers and 3.3M total likes — all without a label push.</p>
+      <a href="https://www.tiktok.com/@rico_tbw" target="_blank" rel="noopener" class="pcard-link"><span data-i18n="press.followtiktok">Follow on TikTok</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </article>
 
     <article class="pcard reveal" style="transition-delay:.18s">
       <div class="pcard-meta"><span class="pcard-tag">Artist</span><span class="pcard-date">2025</span></div>
-      <h3 class="pcard-title">SkiMT drops new music — available now on Spotify</h3>
-      <p class="pcard-excerpt">SkiMT continues to push the boundaries of Colombian R&B and trap with fresh releases that are building steady momentum on streaming platforms.</p>
-      <a href="https://open.spotify.com/artist/20wCNoXOG9bLhqm2yQ8vBF" target="_blank" rel="noopener" class="pcard-link">Listen on Spotify <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <h3 class="pcard-title" data-i18n="press.skimt.title">SkiMT drops new music — available now on Spotify</h3>
+      <p class="pcard-excerpt" data-i18n="press.skimt.excerpt">SkiMT continues to push the boundaries of Colombian R&B and trap with fresh releases that are building steady momentum on streaming platforms.</p>
+      <a href="https://open.spotify.com/artist/20wCNoXOG9bLhqm2yQ8vBF" target="_blank" rel="noopener" class="pcard-link"><span data-i18n="press.listenspotify">Listen on Spotify</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </article>
 
     <article class="pcard reveal" style="transition-delay:.24s">
       <div class="pcard-meta"><span class="pcard-tag">Roster</span><span class="pcard-date">2025</span></div>
-      <h3 class="pcard-title">SAMU and MYNSK join the NNZ family</h3>
-      <p class="pcard-excerpt">NNZ expands its roster with two new additions — SAMU and MYNSK — bringing the total to four artists across urban, alternative and hip-hop.</p>
-      <a href="#artists" class="pcard-link">View Roster <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <h3 class="pcard-title" data-i18n="press.samu.title">SAMU and MYNSK join the NNZ family</h3>
+      <p class="pcard-excerpt" data-i18n="press.samu.excerpt">NNZ expands its roster with two new additions — SAMU and MYNSK — bringing the total to four artists across urban, alternative and hip-hop.</p>
+      <a href="#artists" class="pcard-link"><span data-i18n="press.viewroster">View Roster</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </article>
 
   </div>
@@ -393,9 +396,9 @@
 ═══════════════════════════════════ -->
 <section class="section" id="store" aria-labelledby="store-heading">
   <div class="store-intro reveal">
-    <div class="section-tag">Store</div>
-    <h2 class="section-h" id="store-heading">MERCH &amp;<br>MUSIC</h2>
-    <p>Support the artists directly. Grab exclusive merch and stream their music on every platform.</p>
+    <div class="section-tag" data-i18n="store.tag">Store</div>
+    <h2 class="section-h" id="store-heading" data-i18n-html="store.heading">MERCH &amp;<br>MUSIC</h2>
+    <p data-i18n="store.desc">Support the artists directly. Grab exclusive merch and stream their music on every platform.</p>
   </div>
 
   <div class="store-grid">
@@ -404,10 +407,10 @@
       <div class="scard-body">
         <div class="scard-artist">No Numberz</div>
         <div class="scard-name">NNZ LOGO TEE</div>
-        <p class="scard-desc">Classic heavyweight tee. NNZ logo front, blacked out. Limited run.</p>
+        <p class="scard-desc" data-i18n="store.tee.desc">Classic heavyweight tee. NNZ logo front, blacked out. Limited run.</p>
         <div class="scard-footer">
           <span class="scard-price">$35.000</span>
-          <button class="scard-btn" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
+          <button class="scard-btn" data-i18n="store.buy" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
         </div>
       </div>
     </div>
@@ -417,10 +420,10 @@
       <div class="scard-body">
         <div class="scard-artist">No Numberz</div>
         <div class="scard-name">NNZ Keychain</div>
-        <p class="scard-desc">3D Printed Keychain. NNZ edition, limited drop.</p>
+        <p class="scard-desc" data-i18n="store.keychain.desc">3D Printed Keychain. NNZ edition, limited drop.</p>
         <div class="scard-footer">
           <span class="scard-price">$20.000</span>
-          <button class="scard-btn" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
+          <button class="scard-btn" data-i18n="store.buy" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
         </div>
       </div>
     </div>
@@ -430,10 +433,10 @@
       <div class="scard-body">
         <div class="scard-artist">No Numberz</div>
         <div class="scard-name">NNZ CAP</div>
-        <p class="scard-desc">Structured 6-panel cap. Embroidered NNZ logo. One size fits most.</p>
+        <p class="scard-desc" data-i18n="store.cap.desc">Structured 6-panel cap. Embroidered NNZ logo. One size fits most.</p>
         <div class="scard-footer">
           <span class="scard-price">$30.000</span>
-          <button class="scard-btn" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
+          <button class="scard-btn" data-i18n="store.buy" onclick="alert('Shop link coming soon — update this button with your store URL.')">Buy Now</button>
         </div>
       </div>
     </div>
@@ -442,21 +445,21 @@
   <!-- Music links -->
   <div class="music-strip reveal">
     <div class="music-strip-copy">
-      <h3>STREAM THE<br>MUSIC</h3>
-      <p>All four NNZ artists are on every major platform. Pick yours and start listening.</p>
+      <h3 data-i18n-html="store.stream.heading">STREAM THE<br>MUSIC</h3>
+      <p data-i18n="store.stream.desc">All four NNZ artists are on every major platform. Pick yours and start listening.</p>
     </div>
     <div class="music-platforms">
       <a href="https://open.spotify.com/playlist/2VPkYmbVoyISO9vtRSHwBG?si=53a05dca0dd748dc" target="_blank" rel="noopener" class="platform-link">
         <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        <span class="platform-name">Spotify</span><span class="platform-action">Listen →</span>
+        <span class="platform-name">Spotify</span><span class="platform-action" data-i18n="store.listen">Listen →</span>
       </a>
       <a href="https://www.tiktok.com/@nonumberzlabel" target="_blank" rel="noopener" class="platform-link">
         <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
-        <span class="platform-name">TikTok</span><span class="platform-action">Follow →</span>
+        <span class="platform-name">TikTok</span><span class="platform-action" data-i18n="store.follow">Follow →</span>
       </a>
       <a href="https://www.instagram.com/nonumberzlabel/" target="_blank" rel="noopener" class="platform-link">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        <span class="platform-name">Instagram</span><span class="platform-action">Follow →</span>
+        <span class="platform-name">Instagram</span><span class="platform-action" data-i18n="store.follow">Follow →</span>
       </a>
     </div>
   </div>
@@ -466,31 +469,31 @@
 <section class="section" id="contact" aria-labelledby="contact-heading">
   <div class="contact-wrap">
     <div class="reveal">
-      <div class="section-tag">Contact</div>
-      <h2 class="section-h contact-h" id="contact-heading">LET'S<br>BUILD.</h2>
-      <p class="contact-desc">For bookings, press, media, and collaboration opportunities — reach out below and we'll get back to you.</p>
+      <div class="section-tag" data-i18n="contact.tag">Contact</div>
+      <h2 class="section-h contact-h" id="contact-heading" data-i18n-html="contact.heading">LET'S<br>BUILD.</h2>
+      <p class="contact-desc" data-i18n="contact.desc">For bookings, press, media, and collaboration opportunities — reach out below and we'll get back to you.</p>
       <div class="contact-info">
-        <div class="info-item"><div class="info-label">Email</div><div class="info-val">morantes@nonumberz.com</div></div>
-        <div class="info-item"><div class="info-label">Based In</div><div class="info-val">Medellín, Colombia</div></div>
-        <div class="info-item"><div class="info-label">Open For</div><div class="info-val">Bookings · Press · Collaborations</div></div>
+        <div class="info-item"><div class="info-label" data-i18n="contact.email">Email</div><div class="info-val">morantes@nonumberz.com</div></div>
+        <div class="info-item"><div class="info-label" data-i18n="contact.based">Based In</div><div class="info-val">Medellín, Colombia</div></div>
+        <div class="info-item"><div class="info-label" data-i18n="contact.openfor">Open For</div><div class="info-val" data-i18n="contact.services">Bookings · Press · Collaborations</div></div>
       </div>
     </div>
     <div class="reveal" style="transition-delay:.15s">
       <form class="cform" id="cform" action="https://formspree.io/f/xpqopokd" method="POST" novalidate>
         <div class="frow">
-          <div class="fgroup"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" /></div>
-          <div class="fgroup"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" /></div>
+          <div class="fgroup"><label for="name" data-i18n="form.name">Name</label><input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="form.name.placeholder" required autocomplete="name" /></div>
+          <div class="fgroup"><label for="email" data-i18n="form.email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" /></div>
         </div>
         <div class="fgroup">
-          <label for="reason">Reason</label>
+          <label for="reason" data-i18n="form.reason">Reason</label>
           <select id="reason" name="reason" required>
-            <option value="" disabled selected>Select a reason</option>
-            <option>Booking</option><option>Press / Media</option><option>Collaboration</option><option>General Inquiry</option>
+            <option value="" disabled selected data-i18n="form.reason.default">Select a reason</option>
+            <option data-i18n="form.booking">Booking</option><option>Press / Media</option><option data-i18n="form.collab">Collaboration</option><option data-i18n="form.inquiry">General Inquiry</option>
           </select>
         </div>
-        <div class="fgroup"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you have in mind…" required></textarea></div>
+        <div class="fgroup"><label for="message" data-i18n="form.message">Message</label><textarea id="message" name="message" placeholder="Tell us what you have in mind…" data-i18n-placeholder="form.message.placeholder" required></textarea></div>
         <div class="fstatus" id="fstatus" role="status" aria-live="polite"></div>
-        <button type="submit" class="btn-send" id="fsend">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+        <button type="submit" class="btn-send" id="fsend"><span data-i18n="form.send">Send Message</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
       </form>
     </div>
   </div>
@@ -503,17 +506,17 @@
   <div class="footer-top">
     <div class="footer-brand-col">
       <span class="foot-brand">NO NUMBERZ</span>
-      <p>A Medellín-based artist management agency focused on impact, craft, and building careers that last.</p>
+      <p data-i18n="footer.desc">A Medellín-based artist management agency focused on impact, craft, and building careers that last.</p>
     </div>
     <div class="footer-col">
-      <h4>Navigate</h4>
+      <h4 data-i18n="footer.navigate">Navigate</h4>
       <ul>
-        <li><a href="#artists">Artists</a></li>
+        <li><a href="#artists" data-i18n="nav.artists">Artists</a></li>
         <li><a href="#videos">Videos</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#press">Press</a></li>
-        <li><a href="#store">Store</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="#press" data-i18n="nav.press">Press</a></li>
+        <li><a href="#store" data-i18n="nav.store">Store</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -527,7 +530,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="foot-copy">© <span id="yr"></span> No Numberz — All rights reserved.</span>
+    <span class="foot-copy">© <span id="yr"></span> No Numberz — <span data-i18n="footer.rights">All rights reserved.</span></span>
     <span class="foot-copy">morantes@nonumberz.com</span>
   </div>
 </footer>

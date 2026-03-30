@@ -14,6 +14,197 @@
 ═══════════════════════════════════════════ */
 
 
+/* ─── 0. i18n — Language Toggle ─────────────── */
+const TRANSLATIONS = {
+  en: {
+    'nav.artists':    'Artists',
+    'nav.gallery':    'Gallery',
+    'nav.press':      'Press',
+    'nav.store':      'Store',
+    'nav.contact':    'Contact',
+    'nav.cta':        'Get in touch',
+    'lightbox.close': '✕ Close',
+    'hero.sub':       'NNZ is a management agency focused on impact and craft — bridging the gap between artistic vision and industry reach.',
+    'hero.btn1':      'View Roster',
+    'hero.btn2':      'Work with us',
+    'hero.scroll':    'Scroll',
+    'artists.tag':    'Roster',
+    'artists.heading':'OUR<br>ARTISTS',
+    'artists.count':  '4 Active Artists',
+    'stats.managed':  'Artists Managed',
+    'stats.followers':'TikTok Followers',
+    'stats.likes':    'TikTok Likes',
+    'stats.based':    'Based In',
+    'videos.tag':     'Visual',
+    'videos.heading': 'MUSIC<br>VIDEOS',
+    'videos.all':     'All',
+    'gallery.tag':    'Behind the scenes',
+    'gallery.heading':'GALLERY',
+    'press.tag':      'News',
+    'press.heading':  'PRESS &amp;<br>UPDATES',
+    'press.featured.title':  "No Numberz launches — Medellín's newest artist management agency is here",
+    'press.featured.excerpt':'NNZ is redefining what artist management means in Colombia\'s urban music scene, with a roster that spans R&B, trap, hip-hop and more. Four artists. One vision. No limits.',
+    'press.readmore':        'Read more',
+    'press.rico.title':      'Rico TBW crosses 80K followers on TikTok',
+    'press.rico.excerpt':    'Rico TBW\'s organic TikTok growth hits a new milestone with 80K followers and 3.3M total likes — all without a label push.',
+    'press.followtiktok':    'Follow on TikTok',
+    'press.skimt.title':     'SkiMT drops new music — available now on Spotify',
+    'press.skimt.excerpt':   'SkiMT continues to push the boundaries of Colombian R&B and trap with fresh releases that are building steady momentum on streaming platforms.',
+    'press.listenspotify':   'Listen on Spotify',
+    'press.samu.title':      'SAMU and MYNSK join the NNZ family',
+    'press.samu.excerpt':    'NNZ expands its roster with two new additions — SAMU and MYNSK — bringing the total to four artists across urban, alternative and hip-hop.',
+    'press.viewroster':      'View Roster',
+    'store.tag':             'Store',
+    'store.heading':         'MERCH &amp;<br>MUSIC',
+    'store.desc':            'Support the artists directly. Grab exclusive merch and stream their music on every platform.',
+    'store.tee.desc':        'Classic heavyweight tee. NNZ logo front, blacked out. Limited run.',
+    'store.keychain.desc':   '3D Printed Keychain. NNZ edition, limited drop.',
+    'store.cap.desc':        'Structured 6-panel cap. Embroidered NNZ logo. One size fits most.',
+    'store.buy':             'Buy Now',
+    'store.stream.heading':  'STREAM THE<br>MUSIC',
+    'store.stream.desc':     'All four NNZ artists are on every major platform. Pick yours and start listening.',
+    'store.listen':          'Listen →',
+    'store.follow':          'Follow →',
+    'contact.tag':           'Contact',
+    'contact.heading':       "LET'S<br>BUILD.",
+    'contact.desc':          "For bookings, press, media, and collaboration opportunities — reach out below and we'll get back to you.",
+    'contact.email':         'Email',
+    'contact.based':         'Based In',
+    'contact.openfor':       'Open For',
+    'contact.services':      'Bookings · Press · Collaborations',
+    'form.name':             'Name',
+    'form.name.placeholder': 'Your name',
+    'form.email':            'Email',
+    'form.reason':           'Reason',
+    'form.reason.default':   'Select a reason',
+    'form.booking':          'Booking',
+    'form.collab':           'Collaboration',
+    'form.inquiry':          'General Inquiry',
+    'form.message':          'Message',
+    'form.message.placeholder': 'Tell us what you have in mind…',
+    'form.send':             'Send Message',
+    'form.sending':          'Sending…',
+    'form.success':          "✓ Message sent! We'll get back to you soon.",
+    'footer.desc':           'A Medellín-based artist management agency focused on impact, craft, and building careers that last.',
+    'footer.navigate':       'Navigate',
+    'footer.rights':         'All rights reserved.',
+  },
+  es: {
+    'nav.artists':    'Artistas',
+    'nav.gallery':    'Galería',
+    'nav.press':      'Prensa',
+    'nav.store':      'Tienda',
+    'nav.contact':    'Contacto',
+    'nav.cta':        'Contáctanos',
+    'lightbox.close': '✕ Cerrar',
+    'hero.sub':       'NNZ es una agencia de management enfocada en el impacto y el oficio — conectando la visión artística con el alcance de la industria.',
+    'hero.btn1':      'Ver Artistas',
+    'hero.btn2':      'Trabaja con nosotros',
+    'hero.scroll':    'Deslizar',
+    'artists.tag':    'Plantel',
+    'artists.heading':'NUESTROS<br>ARTISTAS',
+    'artists.count':  '4 Artistas Activos',
+    'stats.managed':  'Artistas Gestionados',
+    'stats.followers':'Seguidores TikTok',
+    'stats.likes':    'Likes TikTok',
+    'stats.based':    'Ubicados En',
+    'videos.tag':     'Visual',
+    'videos.heading': 'VIDEOS<br>MUSICALES',
+    'videos.all':     'Todos',
+    'gallery.tag':    'Detrás de cámaras',
+    'gallery.heading':'GALERÍA',
+    'press.tag':      'Noticias',
+    'press.heading':  'PRENSA &amp;<br>NOTICIAS',
+    'press.featured.title':  'No Numberz lanza — la nueva agencia de management de artistas de Medellín ya está aquí',
+    'press.featured.excerpt':'NNZ está redefiniendo lo que significa el management artístico en la escena musical urbana de Colombia, con un plantel que abarca R&B, trap, hip-hop y más. Cuatro artistas. Una visión. Sin límites.',
+    'press.readmore':        'Leer más',
+    'press.rico.title':      'Rico TBW supera los 80K seguidores en TikTok',
+    'press.rico.excerpt':    'El crecimiento orgánico de Rico TBW en TikTok alcanza un nuevo hito con 80K seguidores y 3.3M de likes en total — todo sin el respaldo de un sello discográfico.',
+    'press.followtiktok':    'Seguir en TikTok',
+    'press.skimt.title':     'SkiMT lanza nueva música — disponible ahora en Spotify',
+    'press.skimt.excerpt':   'SkiMT sigue empujando los límites del R&B y trap colombiano con nuevos lanzamientos que están ganando impulso constante en las plataformas de streaming.',
+    'press.listenspotify':   'Escuchar en Spotify',
+    'press.samu.title':      'SAMU y MYNSK se unen a la familia NNZ',
+    'press.samu.excerpt':    'NNZ amplía su plantel con dos nuevas incorporaciones — SAMU y MYNSK — llevando el total a cuatro artistas entre lo urbano, lo alternativo y el hip-hop.',
+    'press.viewroster':      'Ver Artistas',
+    'store.tag':             'Tienda',
+    'store.heading':         'MERCH &amp;<br>MÚSICA',
+    'store.desc':            'Apoya a los artistas directamente. Consigue merch exclusivo y escucha su música en todas las plataformas.',
+    'store.tee.desc':        'Camiseta pesada clásica. Logo NNZ al frente, en negro. Edición limitada.',
+    'store.keychain.desc':   'Llavero impreso en 3D. Edición NNZ, drop limitado.',
+    'store.cap.desc':        'Gorra estructurada de 6 paneles. Logo NNZ bordado. Talla única.',
+    'store.buy':             'Comprar',
+    'store.stream.heading':  'ESCUCHA LA<br>MÚSICA',
+    'store.stream.desc':     'Los cuatro artistas de NNZ están en todas las plataformas. Elige la tuya y empieza a escuchar.',
+    'store.listen':          'Escuchar →',
+    'store.follow':          'Seguir →',
+    'contact.tag':           'Contacto',
+    'contact.heading':       'CONSTRUYAMOS.',
+    'contact.desc':          'Para reservas, prensa, medios y oportunidades de colaboración — escríbenos y te respondemos pronto.',
+    'contact.email':         'Correo',
+    'contact.based':         'Ubicados En',
+    'contact.openfor':       'Disponibles Para',
+    'contact.services':      'Reservas · Prensa · Colaboraciones',
+    'form.name':             'Nombre',
+    'form.name.placeholder': 'Tu nombre',
+    'form.email':            'Correo',
+    'form.reason':           'Motivo',
+    'form.reason.default':   'Selecciona un motivo',
+    'form.booking':          'Reserva',
+    'form.collab':           'Colaboración',
+    'form.inquiry':          'Consulta General',
+    'form.message':          'Mensaje',
+    'form.message.placeholder': 'Cuéntanos lo que tienes en mente…',
+    'form.send':             'Enviar Mensaje',
+    'form.sending':          'Enviando…',
+    'form.success':          '✓ ¡Mensaje enviado! Te respondemos pronto.',
+    'footer.desc':           'Una agencia de management de artistas basada en Medellín, enfocada en el impacto, el oficio y la construcción de carreras duraderas.',
+    'footer.navigate':       'Navegar',
+    'footer.rights':         'Todos los derechos reservados.',
+  }
+};
+
+let currentLang = localStorage.getItem('nnz-lang') || 'en';
+
+function applyTranslations(lang) {
+  const t = TRANSLATIONS[lang];
+  if (!t) return;
+
+  // Text content
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // Inner HTML (for elements with <br> or entities)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // Lang toggle active state
+  document.querySelectorAll('.lang-opt').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === lang);
+  });
+
+  document.documentElement.lang = lang;
+  currentLang = lang;
+  localStorage.setItem('nnz-lang', lang);
+}
+
+document.getElementById('langToggle').addEventListener('click', () => {
+  applyTranslations(currentLang === 'en' ? 'es' : 'en');
+});
+
+applyTranslations(currentLang);
+
+
 /* ─── 1. Footer Year ────────────────────────── */
 document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -175,9 +366,11 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
 
   // Loading state
-  sendBtn.disabled    = true;
-  sendBtn.textContent = 'Sending…';
-  status.className    = 'fstatus';
+  sendBtn.disabled = true;
+  const sendSpan = sendBtn.querySelector('[data-i18n="form.send"]');
+  if (sendSpan) sendSpan.textContent = TRANSLATIONS[currentLang]['form.sending'];
+  else sendBtn.textContent = TRANSLATIONS[currentLang]['form.sending'];
+  status.className = 'fstatus';
 
   try {
     const res = await fetch(form.action, {
@@ -188,7 +381,7 @@ form.addEventListener('submit', async e => {
 
     if (res.ok) {
       status.className = 'fstatus ok';
-      status.textContent = "✓ Message sent! We'll get back to you soon.";
+      status.textContent = TRANSLATIONS[currentLang]['form.success'];
       form.reset();
 
       // Track conversion in GA4
@@ -206,7 +399,7 @@ form.addEventListener('submit', async e => {
     status.className = 'fstatus err';
     status.textContent = '✗ ' + (err.message || 'Could not send. Email us directly.');
   } finally {
-    sendBtn.disabled   = false;
-    sendBtn.innerHTML  = 'Send Message ' + SEND_ICON;
+    sendBtn.disabled  = false;
+    sendBtn.innerHTML = `<span data-i18n="form.send">${TRANSLATIONS[currentLang]['form.send']}</span> ${SEND_ICON}`;
   }
 });
