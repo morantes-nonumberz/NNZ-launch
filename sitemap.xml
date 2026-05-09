@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ════════════════════════════════════════════
+     NNZ — No Numberz sitemap.xml
+     Submit this file in Google Search Console:
+     https://search.google.com/search-console
+     Path to submit: /sitemap.xml
+════════════════════════════════════════════ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Artist pages — each artist has a dedicated indexable URL -->
+  <url>
+    <loc>https://nonumberz.com/artists/skimt</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://nonumberz.com/artists/rico-tbw</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://nonumberz.com/artists/samu</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://nonumberz.com/artists/mynsk</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Main page -->
+  <url>
+    <loc>https://nonumberz.com/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <!-- hreflang for bilingual content -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://nonumberz.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nonumberz.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nonumberz.com/" />
+  </url>
+
+  <!-- Artists section anchors — listed individually for crawlability -->
+  <url>
+    <loc>https://nonumberz.com/#artists</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://nonumberz.com/#videos</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nonumberz.com/#press</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nonumberz.com/#store</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://nonumberz.com/#contact</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
