@@ -1,0 +1,580 @@
+/* ═══════════════════════════════════════════
+   NNZ — Artist Pages (artist.css)
+   Shared styles for /artists/*.html pages
+═══════════════════════════════════════════ */
+
+/* ─── Artist Hero ────────────────────────── */
+.ap-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 5rem;
+}
+
+.ap-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.ap-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(40%);
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.ap-hero:hover .ap-hero-bg img { transform: scale(1); }
+
+.ap-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5,5,5,0.3) 0%,
+    rgba(5,5,5,0.1) 30%,
+    rgba(5,5,5,0.75) 70%,
+    rgba(5,5,5,0.97) 100%
+  );
+}
+
+.ap-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 0 3.5rem 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+.ap-breadcrumb {
+  font-family: var(--fc);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ap-breadcrumb a { color: var(--muted); transition: color 0.2s; }
+.ap-breadcrumb a:hover { color: var(--accent); }
+.ap-breadcrumb span[aria-current] { color: var(--white); }
+
+.ap-hero-tag {
+  font-family: var(--fc);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.ap-artist-name {
+  font-family: var(--fd);
+  font-size: clamp(4.5rem, 14vw, 11rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+
+.ap-genres {
+  font-family: var(--fc);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.ap-location {
+  font-family: var(--fc);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: rgba(244,244,244,0.35);
+  margin-bottom: 2rem;
+}
+
+.ap-socials {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ap-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fc);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.ap-social-btn svg { width: 15px; height: 15px; fill: currentColor; }
+.ap-social-btn:hover {
+  border-color: var(--accent);
+  background: rgba(255,32,32,0.1);
+  color: var(--accent);
+}
+
+/* ─── Shared Section Styles ──────────────── */
+.ap-section { padding: 6rem 3.5rem; }
+.ap-container { max-width: 1100px; margin: 0 auto; }
+
+.ap-section-h {
+  font-family: var(--fd);
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  margin: 0.6rem 0 2rem;
+  color: var(--white);
+}
+
+/* ─── Bio Section ────────────────────────── */
+.ap-bio-section { background: var(--bg2); }
+
+.ap-bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.ap-bio-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ap-bio-text p {
+  font-family: var(--fb);
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+
+.ap-bio-photo {
+  position: sticky;
+  top: 7rem;
+}
+.ap-bio-photo img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(20%);
+}
+
+.ap-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 2rem;
+  border: 1px solid var(--border);
+}
+.ap-stat {
+  padding: 1.4rem;
+  background: var(--bg3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.ap-stat-n {
+  font-family: var(--fd);
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+.ap-stat-l {
+  font-family: var(--fc);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── Stream Section ─────────────────────── */
+.ap-stream-section { background: var(--bg); }
+
+.ap-stream-desc {
+  font-family: var(--fb);
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+}
+
+.ap-embed iframe {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+/* ─── Videos Section ─────────────────────── */
+.ap-videos-section { background: var(--bg2); }
+
+.ap-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.ap-vcard { position: relative; overflow: hidden; background: var(--bg3); }
+.ap-vcard a { display: block; position: relative; aspect-ratio: 16/9; overflow: hidden; }
+.ap-vcard img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(.16,1,.3,1), filter 0.4s;
+  filter: grayscale(30%);
+}
+.ap-vcard a:hover img { transform: scale(1.04); filter: grayscale(0%); }
+
+.ap-vcard-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ap-vcard a:hover .ap-vcard-play { opacity: 1; }
+.ap-vcard-play svg { width: 64px; height: 64px; }
+
+.ap-vcard-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1.2rem 1.4rem;
+}
+.ap-vcard-artist {
+  font-family: var(--fc);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ap-vcard-title {
+  font-family: var(--fc);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+/* ─── Roster Nav ─────────────────────────── */
+.ap-roster-nav { background: var(--bg); }
+
+.ap-roster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.ap-roster-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg2);
+  text-decoration: none;
+}
+.ap-roster-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(60%);
+  transition: transform 0.5s cubic-bezier(.16,1,.3,1), filter 0.4s;
+}
+.ap-roster-card:hover img { transform: scale(1.05); filter: grayscale(0%); }
+
+.ap-roster-card-body {
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.ap-roster-card:hover .ap-roster-card-body { border-color: var(--accent); }
+
+.ap-roster-name {
+  font-family: var(--fd);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+.ap-roster-genre {
+  font-family: var(--fc);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── CTA Section ────────────────────────── */
+.ap-cta-section { background: var(--bg2); border-top: 1px solid var(--border); }
+
+.ap-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.ap-cta-h {
+  font-family: var(--fd);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  color: var(--white);
+}
+
+.ap-cta-section p {
+  font-family: var(--fb);
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+/* ─── Shared Button (reuse from main) ─── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--fc); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.8rem 1.8rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-red { background: var(--accent); color: var(--white); }
+.btn-red:hover { background: var(--accent2); transform: translateY(-2px); }
+
+/* ─── Responsive ─────────────────────────── */
+@media (max-width: 960px) {
+  .ap-hero-inner { padding: 0 1.6rem; }
+  .ap-section { padding: 4rem 1.6rem; }
+  .ap-bio-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ap-bio-photo { position: static; }
+  .ap-video-grid { grid-template-columns: 1fr; }
+  .ap-roster-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .ap-roster-grid { grid-template-columns: 1fr; }
+  .ap-stats { grid-template-columns: 1fr; }
+  .ap-socials { flex-direction: column; }
+}
+
+/* ─── Artist Facts ───────────────────────── */
+.ap-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 2.5rem;
+  border: 1px solid var(--border);
+}
+.ap-fact {
+  padding: 1rem 1.2rem;
+  background: var(--bg3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ap-fact-label {
+  font-family: var(--fc);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ap-fact-val {
+  font-family: var(--fc);
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+
+/* ─── Discography / Tracks ───────────────── */
+.ap-disco-section { background: var(--bg2); }
+
+.ap-tracks {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+
+.ap-track {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem 2rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.ap-track:last-child { border-bottom: none; }
+.ap-track:hover { background: var(--bg3); }
+.ap-track.ap-track-cta { background: rgba(255,32,32,0.04); }
+.ap-track.ap-track-cta:hover { background: rgba(255,32,32,0.08); }
+
+.ap-track-num {
+  font-family: var(--fd);
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding-top: 0.2rem;
+}
+
+.ap-track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.ap-track-title {
+  font-family: var(--fd);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1;
+}
+.ap-track-meta {
+  font-family: var(--fc);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ap-track-desc {
+  font-family: var(--fb);
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-top: 0.5rem;
+  max-width: 600px;
+}
+
+.ap-track-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--fc);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  margin-top: 0.4rem;
+}
+.ap-track-btn:hover {
+  border-color: var(--accent);
+  background: rgba(255,32,32,0.1);
+  color: var(--accent);
+}
+
+/* ─── Sound Profile ──────────────────────── */
+.ap-sound-section { background: var(--bg); }
+
+.ap-sound-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 2rem;
+}
+
+.ap-sound-card {
+  background: var(--bg2);
+  padding: 2rem;
+  border-top: 3px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+.ap-sound-card:hover {
+  border-color: var(--accent);
+  background: var(--bg3);
+}
+.ap-sound-icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+.ap-sound-card h3 {
+  font-family: var(--fc);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.ap-sound-card p {
+  font-family: var(--fb);
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ─── Stats ──────────────────────────────── */
+.ap-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 2rem;
+  border: 1px solid var(--border);
+}
+.ap-stat {
+  padding: 1.4rem;
+  background: var(--bg3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.ap-stat-n {
+  font-family: var(--fd);
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  line-height: 1;
+}
+.ap-stat-l {
+  font-family: var(--fc);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── Responsive additions ───────────────── */
+@media (max-width: 960px) {
+  .ap-track { grid-template-columns: 40px 1fr; }
+  .ap-track-btn { grid-column: 2; }
+  .ap-sound-grid { grid-template-columns: 1fr; }
+  .ap-facts { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .ap-track { grid-template-columns: 1fr; gap: 0.8rem; padding: 1.5rem; }
+  .ap-track-num { font-size: 1.4rem; }
+  .ap-facts { grid-template-columns: 1fr; }
+}
